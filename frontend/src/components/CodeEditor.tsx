@@ -35,7 +35,6 @@ export function CodeEditor({
     });
     monaco.editor.setTheme("vizDark");
 
-    // Highlight active line via decorations
     if (activeLine && activeLine > 0) {
       _editor.deltaDecorations(
         [],

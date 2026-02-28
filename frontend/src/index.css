@@ -48,7 +48,6 @@ body {
   height: 100%;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -61,14 +60,12 @@ body {
   border-radius: 2px;
 }
 
-/* ── Layout ─────────────────────────────────── */
 .app {
   display: grid;
   grid-template-rows: 52px 1fr 48px;
   height: 100vh;
 }
 
-/* ── Header ─────────────────────────────────── */
 .header {
   display: flex;
   align-items: center;
@@ -157,7 +154,6 @@ body {
   transform: translateY(0);
 }
 
-/* ── Main Content ───────────────────────────── */
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -182,7 +178,6 @@ body {
   overflow-y: auto;
 }
 
-/* ── Visualizer Grid ────────────────────────── */
 .viz-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -246,7 +241,6 @@ body {
   gap: 4px;
 }
 
-/* ── Stack Frames ───────────────────────────── */
 .frame {
   background: var(--blue-dim);
   border: 1px solid rgba(68, 136, 255, 0.1);
@@ -257,7 +251,6 @@ body {
   font-weight: 400;
 }
 
-/* ── Variables ──────────────────────────────── */
 .var-row {
   display: flex;
   justify-content: space-between;
@@ -275,7 +268,6 @@ body {
   color: var(--text-secondary);
 }
 
-/* ── Queue Items ────────────────────────────── */
 .q-item {
   border-radius: var(--radius);
   padding: 8px 12px;
@@ -301,7 +293,6 @@ body {
   color: var(--accent);
 }
 
-/* Console */
 .console-section {
   margin-top: auto;
   border-top: 1px solid var(--border);
@@ -323,7 +314,6 @@ body {
   font-style: italic;
 }
 
-/* ── Queue Group ────────────────────────────── */
 .queue-group {
   flex: 1;
   display: flex;
@@ -344,7 +334,6 @@ body {
   margin-top: 0;
 }
 
-/* ── Footer / Controls ──────────────────────── */
 .footer {
   display: flex;
   align-items: center;

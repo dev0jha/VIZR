@@ -18,7 +18,6 @@ const spring = { type: "spring", stiffness: 500, damping: 30 };
 export function Visualizer({ state }: VisualizerProps) {
   return (
     <div className="viz-grid">
-      {/* ── Call Stack ──────────────────────── */}
       <div className="viz-cell">
         <div className="viz-label">
           <span className="dot dot-blue" /> Call Stack
@@ -45,7 +44,6 @@ export function Visualizer({ state }: VisualizerProps) {
         </div>
       </div>
 
-      {/* ── Variables ───────────────────────── */}
       <div className="viz-cell">
         <div className="viz-label">
           <span className="dot dot-accent" /> Scope
@@ -72,7 +70,6 @@ export function Visualizer({ state }: VisualizerProps) {
         </div>
       </div>
 
-      {/* ── Web APIs + Console Output ──────── */}
       <div className="viz-cell">
         <div className="viz-label">
           <span className="dot dot-accent" /> Web APIs
@@ -107,7 +104,6 @@ export function Visualizer({ state }: VisualizerProps) {
         </div>
       </div>
 
-      {/* ── Queues ──────────────────────────── */}
       <div className="viz-cell">
         <div className="viz-label">
           <span className="dot dot-purple" /> Event Loop

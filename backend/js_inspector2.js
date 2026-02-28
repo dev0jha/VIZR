@@ -8,7 +8,7 @@ session.on("Debugger.paused", (message) => {
   const frames = message.params.callFrames;
   if (frames.length > 0) {
     const frame = frames[0];
-    // We only care if it's our parsed script
+
     if (frame.url && frame.url !== "" && !frame.url.startsWith("node:")) {
       trace.push({
         line: frame.location.lineNumber + 1,
@@ -21,7 +21,6 @@ session.on("Debugger.paused", (message) => {
 });
 
 session.post("Debugger.enable", () => {
-  // Add script to run
   const code = `
 function hello() {
     console.log("hello");
@@ -33,7 +32,6 @@ setTimeout(() => {
 Promise.resolve().then(() => console.log("promise"));
 `;
 
-  // To intercept the initial start, we can run it in a VM context if we want, or evaluate it
   session.post("Runtime.evaluate", { expression: code }, () => {
     setTimeout(() => {
       console.log(JSON.stringify(trace, null, 2));

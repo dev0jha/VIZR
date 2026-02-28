@@ -47,10 +47,8 @@ def clean_locals(local_dict):
     cleaned = {}
     for k, v in local_dict.items():
         if not k.startswith("__"):
-            # Avoid huge objects and functions
             if callable(v) or type(v).__name__ == "module":
                 continue
-            # Try to serialize simply
             if isinstance(v, (int, float, str, bool, type(None))):
                 cleaned[k] = v
             elif isinstance(v, (list, tuple, set, dict)):
@@ -74,7 +72,7 @@ def run_python_trace(code: str) -> TraceResult:
         if frame.f_code.co_filename != "<string>":
             return trace_calls
         
-        # Capture current stdout if any
+
         current_out = output_capture.getvalue()
         current_err = error_capture.getvalue()
 
@@ -88,7 +86,7 @@ def run_python_trace(code: str) -> TraceResult:
         )
         steps.append(step)
         
-        # Stop tracing if we've recorded too many steps to prevent infinite loops
+
         if len(steps) > 5000:
             raise RuntimeError("Execution Trace Limit Exceeded (5000 steps)")
 
@@ -96,7 +94,6 @@ def run_python_trace(code: str) -> TraceResult:
 
     error_msg = None
     try:
-        # We execute in an isolated dictionary
         env = {}
         
         sys.settrace(trace_calls)
@@ -109,7 +106,7 @@ def run_python_trace(code: str) -> TraceResult:
         sys.stdout = original_stdout
         sys.stderr = original_stderr
 
-    # Fallback to get final outputs
+
     final_out = output_capture.getvalue()
     
     return TraceResult(

@@ -151,7 +151,6 @@ function App() {
 
   return (
     <div className="app">
-      {/* ── Header ──────────────────────────── */}
       <header className="header">
         <div className="logo">
           <span>{">"}</span> vizr
@@ -179,7 +178,6 @@ function App() {
         </div>
       </header>
 
-      {/* ── Main ────────────────────────────── */}
       <main className="main">
         <div className="editor-section">
           <CodeEditor
@@ -194,7 +192,6 @@ function App() {
         <Visualizer state={visState} />
       </main>
 
-      {/* ── Footer ──────────────────────────── */}
       <footer className="footer">
         <button
           className="ctrl-btn"
